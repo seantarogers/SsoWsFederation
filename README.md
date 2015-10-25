@@ -1,7 +1,7 @@
 SsoWsFederation
 ===========================
 
-A single sign on/sign off prototype implemented with Windows Identity Federation and Asp.Net Mvc.
+A single sign on/sign off prototype.
 
 Overview
 ------
@@ -20,6 +20,6 @@ Note the CertificateManager.cs currently looks for a cert named = "SeansCert" in
 Interesting areas of code
 ------
 
-1. Domain specific claims enrichment via the Claims authentication Managers on each RP ensuring the tokens do not become too bloated.
-2. Scalable Sign sign out using the realm tracker to only sign you out of sites you have visited.
-3. And many others!
+1. Domain specific claims enrichment via the Claims authentication Managers on each RP. These ensure domain concepts do not leak out into the STS and bloat the tokens unecessarily.
+2. Scalable Sign sign out using the realm tracker.  This feature enables the system to only sign a user out of sites that they have actually visited. As opposed to an inefficient and unscalable blanket sign out.
+3. Many others!
