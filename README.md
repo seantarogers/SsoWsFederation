@@ -1,11 +1,6 @@
 SsoWsFederation
 ===========================
 
-A single sign on/sign off prototype.
-
-Overview
-------
-
 A single sign on/sign off prototype implemented with Windows Identity Federation/WsFederation and Asp.Net Mvc.
 
 To run this solution
