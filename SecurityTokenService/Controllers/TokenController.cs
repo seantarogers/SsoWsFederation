@@ -12,16 +12,19 @@ namespace SecurityTokenService.Controllers
     [Authorize]
     public class TokenController : Controller
     {
+        private ISamlTokenService samlTokenService;
+
+        public TokenController(ISamlTokenService samlTokenService)
+        {
+            this.samlTokenService = samlTokenService;
+        }
+
         [Route("get")]
         [HttpGet]
         public ContentResult Get()
         {
             var wsFederationMessage = ValidateRequestType();
             ValidateWsFederationMessage(wsFederationMessage);
-            
-            var samlTokenService = new SamlTokenService(
-                new RealmTracker(HttpContext),
-                new SecurityTokenServiceConfigurationFactory());
             var signInResponseMessage = samlTokenService.CreateResponseContainingToken(HttpContext.Request.Url);
 
             return new ContentResult { Content = signInResponseMessage.WriteFormPost() };

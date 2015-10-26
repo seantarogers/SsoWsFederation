@@ -29,7 +29,7 @@
         private static void RegisterServices(Container container)
         {
             container.Register<IRealmTracker, RealmTracker>();
-            container.Register<SamlTokenService, SamlTokenService>();
+            container.Register<ISamlTokenService, SamlTokenService>();
         }
 
         private static void RegisterManagers(Container container)
