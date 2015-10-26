@@ -16,5 +16,5 @@ Interesting areas of code
 ------
 
 1. Domain specific claim enrichment via each RP's ClaimsAuthenticationManager. These ensure domain concepts do not leak out into the STS and bloat the tokens unecessarily.
-2. Scalable sign out using the Realm Tracker.  This feature enables us to sign a user out of sites that they have actually visited, rather than issuing an inefficient and unscalable blanket sign out of all federated sites.
+2. Scalable single sign out using the Realm Tracker.  This feature enables us to sign a user out of sites that they have actually visited, rather than issuing an inefficient and unscalable blanket sign out of all federated sites.
 3. Many others!
